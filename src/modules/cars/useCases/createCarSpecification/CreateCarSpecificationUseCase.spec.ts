@@ -1,4 +1,6 @@
+import { SpecificationsRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationsRepositories";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
+import { SpecificationsRepositoryInMemory } from "@modules/cars/repositories/in-memory/SpecificationsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
@@ -6,11 +8,14 @@ import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
+let specificationsRepositoryInMemory: SpecificationsRepositoryInMemory;
 
 describe("Create Car Specificatiion", () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
-    createCarSpecificationUseCase = new CreateCarSpecificationUseCase(carsRepositoryInMemory);
+    specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
+    createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
+      carsRepositoryInMemory, specificationsRepositoryInMemory);
   });
 
   it("should not be able to add a new specification to non-existent car", async () => {
