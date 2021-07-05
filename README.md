@@ -56,4 +56,5 @@ Deve ser possivel cadastrar um aluguel
 O aluguel deve ter duracao minima de 24 horas.
 Nao deve ser possivel cadastrar um novo aluguel caso ja exista um aberto para o mesmo usuario.
 Nao deve ser possivel cadastrar um novo aluguel caso ja exista um aberto para o mesmo carro.
+O usuario deve estar logado na aplicacao
 # rentx
