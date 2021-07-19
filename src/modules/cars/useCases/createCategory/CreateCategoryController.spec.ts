@@ -1,15 +1,14 @@
-import { Connection } from 'typeorm';
-import createConnection from "@shared/infra/typeorm";
 import { app } from '@shared/infra/http/app';
 import request from 'supertest';
 import { hash } from 'bcryptjs';
 import { v4 as uuid } from 'uuid';
+import { Connection } from 'typeorm';
+import createConnection from "@shared/infra/typeorm";
 
 
 let connection:Connection;
 describe("Create Category Controller", () => {
   
-
   beforeAll(async () => {
     connection = await createConnection();
     await connection.runMigrations();
@@ -17,11 +16,11 @@ describe("Create Category Controller", () => {
     const id = uuid();
     const password = await hash("admin", 8);
 
-    await connection.query(`INSERT INTO USERS(id, name, email, password, "isAdmin", created_at, driver_license, avatar)
-    values('${id}', 'admin', 'admin@rentx.com.br', '${password}', true, 'now()', 'XXXXX', 'adminAvatar')`)
+    await connection.query(`INSERT INTO USERS(id,name,email,password, "isAdmin", created_at, driver_license)
+    values('${id}', 'admin', 'admin@rentx.com.br', '${password}',true)`)//'now()', 'XXXXX', 'adminAvatar'
   });
 
-  afterAll( async () => {
+  afterAll(async () => {
     await connection.dropDatabase();
     await connection.close();
   })
@@ -34,7 +33,9 @@ describe("Create Category Controller", () => {
 
     const { token } = responseToken.body;
 
-    const response = await request(app).post("/categories").send({
+    const response = await request(app)
+    .post("/categories")
+    .send({
       name: "Category Supertest",
       description: "Category Supertest",
     })
@@ -53,7 +54,9 @@ describe("Create Category Controller", () => {
 
     const { token } = responseToken.body;
 
-    const response = await request(app).post("/categories").send({
+    const response = await request(app)
+    .post("/categories")
+    .send({
       name: "Category Supertest",
       description: "Category Supertest",
     })
