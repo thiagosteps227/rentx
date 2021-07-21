@@ -7,6 +7,7 @@ import createConnection from "@shared/infra/typeorm";
 
 
 let connection:Connection;
+
 describe("Create Category Controller", () => {
   
   beforeAll(async () => {
@@ -42,7 +43,7 @@ describe("Create Category Controller", () => {
     .set({
       Authorization: `Bearer ${token}`,
     });
-
+    
     expect(response.status).toBe(201);
   })
 
