@@ -11,8 +11,7 @@
        "@errors/*": ["errors/*"],
        "@utils/*": ["utils/*"]
      },                                 
-    "esModuleInterop": true,
-                            
+    "esModuleInterop": true,                   
     "experimentalDecorators": true,              
     "emitDecoratorMetadata": true,               
     "skipLibCheck": true,                          

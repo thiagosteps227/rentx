@@ -11,7 +11,7 @@ import { IMailProvider } from "@shared/container/providers/MailProvider/IMailPro
 
 
 @injectable()
-class SendForgoPasswordMailUseCase {
+class SendForgotPasswordMailUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository,
@@ -63,4 +63,4 @@ class SendForgoPasswordMailUseCase {
 
 }
 
-export { SendForgoPasswordMailUseCase };
+export { SendForgotPasswordMailUseCase };
