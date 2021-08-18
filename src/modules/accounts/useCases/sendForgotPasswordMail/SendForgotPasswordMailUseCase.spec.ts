@@ -6,6 +6,7 @@ import { AppError } from "@shared/errors/AppError";
 import { SendForgotPasswordMailUseCase } from "./SendForgotPasswordMailUseCase";
 
 
+
 let sendForgotPasswordMailUseCase: SendForgotPasswordMailUseCase;
 let usersRepositoryInMemory: UsersRepositoryInMemory;
 let dateProvider: DayjsDateProvider;
@@ -27,7 +28,7 @@ describe("Send forgot mail", () => {
     )
   })
   it("should be able to send a forgot password mail to user", async () => {
-    const sendMail = spyOn(mailProvider, "sendMail");
+    const sendMail = jest.spyOn(mailProvider, "sendMail");
 
     await usersRepositoryInMemory.create({
       driver_license: "12345",
@@ -50,7 +51,7 @@ describe("Send forgot mail", () => {
   });
 
   it("Should be able to create an users token", async () => {
-    const generateTokenMail = spyOn(usersTokensRepositoryInMemory, "create");
+    const generateTokenMail = jest.spyOn(usersTokensRepositoryInMemory, "create");
 
     usersRepositoryInMemory.create({
       driver_license: "12355",
