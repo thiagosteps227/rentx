@@ -5,11 +5,11 @@ export class CreateUsersToken1626878805109 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "users_token",
+                name: "users_tokens",
                 columns: [
                 {
                     name: "id",
-                    type: "varchar",
+                    type: "uuid",
                     isPrimary: true,
                 },
                 {
@@ -18,7 +18,7 @@ export class CreateUsersToken1626878805109 implements MigrationInterface {
                 },
                 {
                     name: "user_id",
-                    type: "varchar"
+                    type: "uuid"
                 },
                 {
                     name: "expires_date",
