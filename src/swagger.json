@@ -11,44 +11,50 @@
     "paths": {
         "/categories": {
             "post": {
-                "tags": ["Category"],
+                "tags": [
+                    "Category"
+                ],
                 "summary": "Create a category",
-                    "description": "Create a new Category",
-                    "security": [
-                        { "bearerAuth": []}
-                    ],
-                    "requestBody": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "description": {
-                                            "type": "string"
-                                        }
+                "description": "Create a new Category",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
                                     },
-                                    "example": {
-                                        "name": "Category name sample",
-                                        "description": "Category description sample"
+                                    "description": {
+                                        "type": "string"
                                     }
+                                },
+                                "example": {
+                                    "name": "Category name sample",
+                                    "description": "Category description sample"
                                 }
                             }
                         }
-                    },
-                    "responses": {
-                        "201": {
-                            "description": "Created"
-                        },
-                        "500": {
-                            "description": "Category Already Exists"
-                        }
                     }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Category Already Exists"
+                    }
+                }
             },
             "get": {
-                "tags": ["Category"],
+                "tags": [
+                    "Category"
+                ],
                 "summary": "List all categories",
                 "description": "List all categories",
                 "responses": {
@@ -78,11 +84,15 @@
         },
         "/categories/import": {
             "post": {
-                "tags": ["Category"],
+                "tags": [
+                    "Category"
+                ],
                 "summary": "Upload new category",
                 "description": "Upload new category",
                 "security": [
-                    { "bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
                     "content": {
@@ -108,11 +118,15 @@
         },
         "/specifications": {
             "post": {
-                "tags": ["Specifications"],
+                "tags": [
+                    "Specifications"
+                ],
                 "summary": "Create a specification",
                 "description": "Create a new specification",
                 "security": [
-                    { "bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
                     "content": {
@@ -135,7 +149,9 @@
         },
         "/sessions": {
             "post": {
-                "tags": ["Session"],
+                "tags": [
+                    "Session"
+                ],
                 "summary": "Authentication User",
                 "description": "Authentication User",
                 "requestBody": {
@@ -145,7 +161,7 @@
                                 "type": "object",
                                 "properties": {
                                     "email": {
-                                        "type":"string"
+                                        "type": "string"
                                     },
                                     "password": {
                                         "type": "string"
@@ -167,11 +183,15 @@
         },
         "/cars": {
             "post": {
-                "tags": ["Cars"],
+                "tags": [
+                    "Cars"
+                ],
                 "summary": "Create a new Car",
                 "description": "Create a new Car",
                 "security": [
-                    { "bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "requestBody": {
                     "content": {
@@ -184,7 +204,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description":"Created"
+                        "description": "Created"
                     },
                     "400": {
                         "description": "Car Already Exists"
@@ -194,11 +214,15 @@
         },
         "/cars/images/{id}": {
             "post": {
-                "tags": ["Cars"],
+                "tags": [
+                    "Cars"
+                ],
                 "summary": "Upload images",
                 "description": "Upload images",
                 "security": [
-                    {"bearerAuth": []}
+                    {
+                        "bearerAuth": []
+                    }
                 ],
                 "parameters": [
                     {
@@ -277,12 +301,12 @@
         }
     },
     "components": {
-    "securitySchemes": {
-        "bearerAuth": {
-            "type": "http",
-            "scheme": "bearer",
-            "bearerFormat": "JWT"
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
         }
-    }
     }
 }
