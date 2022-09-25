@@ -24,7 +24,7 @@ TODO
 Cloning the Repository
 
 ```
-$ git clone 
+$ git clone https://github.com/thiagosteps227/rentx
 ```
 
 ```
@@ -35,44 +35,8 @@ or
 $ npm install
 ```
 
-#### For IOS development
-
-```
-sudo gem install cocoapods
-
-cd ios && pod install
-```
-
-#### For ANDROID develpment
-
-Go to file:
-/node_modules/@mauron85/react-native-background-geolocation/android/common/gradle.properties
-And set:
-```
-android.enableUnitTestBinaryResources=false
-```
-from terminal
-```
-npx jetify
-```
-
 ## Running
-With all dependencies installed and the environment properly configured, you can now run the app.
-
-* For the first time, run the app on Xcode or Android Studio and after that:
-
-#### Android
-```
-$ yarn android
-```
-#### iOS
-```
-$ yarn ios
-```
-
-## Connecting the App with Servers
-
-1 - Follow the instructions on the RentX to have the server running on your machine.
+With all dependencies installed and the environment properly configured, you can now run the REST API.
 
 
 ## Built With
@@ -88,42 +52,42 @@ You can send how many PR's do you want, I'll be glad to analyse and accept them!
 
 Email-me: thiagosteps@gmail.com
 
-Connect with me at [LinkedIn](https://www.linkedin.com/in/daniel-carvalho-0a4916122/)
+Connect with me at [LinkedIn](https://www.linkedin.com/in/thiago-dos-passos-075b171a3/)
 
 Thank you!
 
+# Use Cases
 
-
-# Cadastro de carro
+# Registering Cars
 
 **RF** 
-Deve ser possivel cadastrar um novo carro.
-Deve ser possivel listar todas as categorias.
+Must be possible to register a new Car
+Must be possible to list all the categories
 
 
-**RN** => Regra de Negocio
-Nao deve ser possivel cadastrar um carro com uma placa ja existente.
-O carro deve ser cadastrado, por padrao, com disponibilidade.
-* O usuario responsavel pelo cadastro dever ser um usuario administrador.
+**RN** => Business rules
+Must not be possible to register a new car with existing plate number
+The new car must be registered as available (default)
+* The user responsible for the car registering must be an admin user.
 
-# Listagem de carros
+# Cars listing
 
 **RF**
-Deve ser possivel listar todos os carros disponiveis.
-Deve ser possivel listar todos os carros disponiveis pelo nome da categoria.
-Deve ser possivel listar todos os carros disponiveis pelo nome da marca.
-Deve ser possivel listar todos os carros disponiveis pelo nome do carro.
+Must be possible to list all cars available
+Must be possible to list all cars available by car categories
+Must be possible to list all cars available by car brand
+Must be possible to list all cars available by car name
 
 **RN**
-O usuario nao precisa estar logado no sistema.
+The user is not required to be logged in the system
 
 
-# Cadastro de Especificacao no carro
+# Registering car specifications
 
 **RF**
-Deve ser possivel cadastrar uma especificacao para um carro
-Deve ser possivel listar todas as especificacoes
-Deve ser possivel listar todos os carros
+Must be possible to register a car specification to a car
+Must be possible to list all specifications
+Must be possible to list all cars
 
 **RN**
 Nao deve ser possivel cadastrar uma especificacao para um carro nao cadastrado.
