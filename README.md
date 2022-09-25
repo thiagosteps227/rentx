@@ -1,3 +1,99 @@
+# RentX
+An API to serve as a Rent Cars Service. It was built for studies purposes... 
+
+
+It consists on a REST API for login, sign up, authentication, and controlling the renting car services. 
+ 
+
+## Functionalities
+* Sign up / Login / Authentication
+* TODO
+* TODO
+
+## Tech/framework used
+* Node.js
+* Express
+* PostgreSQL
+
+## Installation - yarn
+### Prerequisites
+
+TODO
+
+### Installing
+Cloning the Repository
+
+```
+$ git clone 
+```
+
+```
+$ yarn
+```
+or
+```
+$ npm install
+```
+
+#### For IOS development
+
+```
+sudo gem install cocoapods
+
+cd ios && pod install
+```
+
+#### For ANDROID develpment
+
+Go to file:
+/node_modules/@mauron85/react-native-background-geolocation/android/common/gradle.properties
+And set:
+```
+android.enableUnitTestBinaryResources=false
+```
+from terminal
+```
+npx jetify
+```
+
+## Running
+With all dependencies installed and the environment properly configured, you can now run the app.
+
+* For the first time, run the app on Xcode or Android Studio and after that:
+
+#### Android
+```
+$ yarn android
+```
+#### iOS
+```
+$ yarn ios
+```
+
+## Connecting the App with Servers
+
+1 - Follow the instructions on the RentX to have the server running on your machine.
+
+
+## Built With
+
+- [Node.js](https://facebook.github.io/nodejs/) - Build the native app using JavaScript and React
+- [ESlint](https://eslint.org/) - Linter
+- [Prettier](https://prettier.io/) - Code Formatter
+- [Babel](https://babeljs.io/) - JavaScript Compiler
+
+## Contributing
+
+You can send how many PR's do you want, I'll be glad to analyse and accept them! And if you have any question about the project...
+
+Email-me: thiagosteps@gmail.com
+
+Connect with me at [LinkedIn](https://www.linkedin.com/in/daniel-carvalho-0a4916122/)
+
+Thank you!
+
+
+
 # Cadastro de carro
 
 **RF** 
